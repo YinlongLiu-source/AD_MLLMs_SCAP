@@ -1,1 +1,0 @@
-This folder is designated for storing the iFLYTEK dataset
