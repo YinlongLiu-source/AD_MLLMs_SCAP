@@ -1,0 +1,1 @@
+This folder is designated for storing the Qwen2.5-Omni-7B.

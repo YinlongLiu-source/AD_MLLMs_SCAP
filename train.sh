@@ -1,0 +1,30 @@
+NCCL_P2P_DISABLE="1" NCCL_IB_DISABLE="1" CUDA_VISIBLE_DEVICES=0,1,2,3 swift sft \
+    --model MLLMs/midashenglm-7b \
+    --train_type lora \
+    --torch_dtype bfloat16 \
+    --device_map="auto" \
+    --dataset Dataset/train_example.jsonl \
+    --val_dataset Dataset/test_example.jsonl \
+    --dataset_num_proc 4 \
+    --system "You are an expert neurologist specializing in Alzheimer’s disease diagnosis." \
+    --output_dir "Instruction_tuning_output" \
+    --num_train_epochs 10 \
+    --save_strategy steps \
+    --save_steps 2 \
+    --eval_steps 2 \
+    --logging_steps 2 \
+    --save_total_limit 50 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1  \
+    --gradient_accumulation_steps 2 \
+    --learning_rate 1e-4 \
+    --report_to tensorboard \
+    --warmup_ratio 0.05 \
+    --freeze_llm False \
+    --freeze_vit False \
+    --freeze_aligner False \
+    --target_modules all-linear \
+    --lora_rank 8 \
+    --lora_alpha 32 \
+    --dataloader_num_workers 4 \
+    --create_checkpoint_symlink True
