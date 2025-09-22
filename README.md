@@ -27,7 +27,7 @@ Please download the pre-trained Multimodal Large Language Models (MLLMs) from th
 
 # Training
 
-Our model training is implemented using the [MS-Swift](https://github.com/modelscope/ms-swift) framework.
+Our model training is implemented using the [ms-swift](https://github.com/modelscope/ms-swift) framework.
 
 * **`train.sh`**: This is the main script for instruction fine-tuning the MLLMs. You can customize the training process by modifying the parameters within this script.
 * **`merge.sh`**: After fine-tuning, run this script to merge the LoRA adapter weights with the original model weights to create the final adapted model.
