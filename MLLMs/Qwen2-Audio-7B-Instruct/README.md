@@ -1,1 +1,0 @@
-This folder is designated for storing the Qwen2-Audio-7B-Instruct.
